@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MultiFunction Clock by SayyadN</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="clock">Clock</button>
+      <button class="tab-btn" data-tab="timer">Timer</button>
+      <button class="tab-btn" data-tab="alarms">Alarms</button>
+    </div>
+
+    <div class="tab-content active" id="clock-tab">
+      <div class="settings-panel">
+        <div class="settings-group">
+          <label for="time-format">Time Format:</label>
+          <select id="time-format">
+            <option value="12">12 Hour</option>
+            <option value="24">24 Hour</option>
+          </select>
+        </div>
+
+        <div class="settings-group">
+          <label for="theme">Theme:</label>
+          <select id="theme">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="neon">Neon</option>
+          </select>
+        </div>
+
+        <div class="settings-group">
+          <label for="gravity-mode">Confetti Mode:</label>
+          <select id="gravity-mode">
+            <option value="float">Float</option>
+            <option value="gravity">Gravity</option>
+            <option value="disabled">Disabled</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="clock">
+        <div class="digit" id="hours1"></div>
+        <div class="digit" id="hours2"></div>
+        <div class="separator">:</div>
+        <div class="digit" id="minutes1"></div>
+        <div class="digit" id="minutes2"></div>
+        <div class="separator">:</div>
+        <div class="digit" id="seconds1"></div>
+        <div class="digit" id="seconds2"></div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="timer-tab">
+      <div class="timer-controls">
+        <input type="number" id="timer-hours" placeholder="Hours" min="0" max="23">
+        <input type="number" id="timer-minutes" placeholder="Minutes" min="0" max="59">
+        <input type="number" id="timer-seconds" placeholder="Seconds" min="0" max="59">
+        <button id="timer-start">Start</button>
+        <button id="timer-pause">Pause</button>
+        <button id="timer-reset">Reset</button>
+      </div>
+      <div class="timer-display">
+        <div class="digit" id="timer-hours1"></div>
+        <div class="digit" id="timer-hours2"></div>
+        <div class="separator">:</div>
+        <div class="digit" id="timer-minutes1"></div>
+        <div class="digit" id="timer-minutes2"></div>
+        <div class="separator">:</div>
+        <div class="digit" id="timer-seconds1"></div>
+        <div class="digit" id="timer-seconds2"></div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="alarms-tab">
+      <div class="alarms-list" id="alarms-container">
+        <button id="add-alarm">+ Add Alarm</button>
+      </div>
+    </div>
+
+    <div class="fullscreen-controls">
+      <button id="fullscreen-toggle">Toggle Fullscreen</button>
+    </div>
+
+    <div class="footer">
+      <p>Created by SayyadN</p>
+    </div>
+  </div>
+  
+  <script type="module" src="app.js"></script>
+</body>
+</html>

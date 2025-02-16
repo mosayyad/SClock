@@ -1,0 +1,2 @@
+this.setupEventListeners();
+this.loadAlarms();
